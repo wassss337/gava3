@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Gava Language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0c10;
+            color: white;
+            padding: 20px;
+        }
+        pre {
+            background: #1a1d2e;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .sidebar {
+            float: left;
+            width: 200px;
+        }
+        .content {
+            margin-left: 220px;
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+        }
+        code {
+            background: #1a1d2e;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>⚡ Gava v3.0</h2>
+        <a href="#intro">О языке</a>
+        <a href="#install">Установка</a>
+        <a href="#modules">Модули</a>
+        <a href="#cpp">C++ импорт</a>
+        <a href="#ide">VS Code</a>
+        <a href="#examples">Примеры</a>
+        <hr>
+        <a href="https://github.com/wassss337/gava3" target="_blank">📦 GitHub</a>
+    </div>
+
+    <div class="content">
+        <div id="intro">
+            <h1>⚡ Gava — язык программирования</h1>
+            <p>Создан <strong>wassss337</strong>. Версия 3.0 уже на GitHub!</p>
+            <ul>
+                <li>✅ Свой байткод и VM</li>
+                <li>✅ Асинхронность async/await</li>
+                <li>✅ Импорт C++ модулей на лету</li>
+                <li>✅ Пакетный менеджер GPM</li>
+                <li>✅ Расширение для VS Code</li>
+            </ul>
+        </div>
+
+        <div id="install">
+            <h2>🛠️ Установка</h2>
+            <pre>git clone https://github.com/wassss337/gava3.git
+cd gava3
+.\install_gava.bat</pre>
+            <p><code>gava start app.gava</code> — запустить скрипт</p>
+        </div>
+
+        <div id="modules">
+            <h2>📦 Система модулей</h2>
+            <p>Файл <code>http.glc</code> (JSON-манифест):</p>
+            <pre>{
+   "name": "http",
+   "direct": "http/",
+   "main": "http/main.cpp"
+}</pre>
+            <p><code>import http;</code> — компилирует C++ в фоне и загружает в память.</p>
+        </div>
+
+        <div id="cpp">
+            <h2>⚡ Импорт C++</h2>
+            <pre>// __init__.gava
+import cpp api.main;
+import cpp socket;</pre>
+            <p>Крупные C++ файлы компилируются на несколько миллисекунд раньше.</p>
+        </div>
+
+        <div id="ide">
+            <h2>🎨 VS Code Extension</h2>
+            <p>Файл <code>gava-extension.vsix</code> — установка через Extensions → Install from VSIX.</p>
+        </div>
+
+        <div id="examples">
+            <h2>💡 Пример кода</h2>
+            <pre>import http;
+import json;
+
+async function fetchData() {
+    let response = await http.get("https://api.example.com");
+    let data = json.parse(response);
+    print(data);
+}
+
+fetchData();</pre>
+        </div>
+
+        <hr>
+        <p>✨ Gava v3.0 — май 2026 | <a href="https://github.com/wassss337/gava3" target="_blank">github.com/wassss337/gava3</a> ✨</p>
+    </div>
+</body>
+</html>
